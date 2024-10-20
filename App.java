@@ -37,7 +37,6 @@ public class App {
                     return;
                 default:
                     System.out.println("Opsi tidak valid.");
-                    System.out.println("Opsi tidak valid. lagi");
             }
         }
     }
