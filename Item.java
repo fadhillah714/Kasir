@@ -1,10 +1,11 @@
-package Kasir;
 public class Item {
     //atribut milik dari object Item.
     private double itemPrice;
     private String itemName;
     private String itemCode;
     private int itemStock;
+    private double Jumlah;
+    private double bayar;
 
     //Default constructor 
     public Item(){}
@@ -23,10 +24,15 @@ public class Item {
     }
 
     //Konstruktor: dijalankan saat proses instansiasi. 
-    public Item(String code, String name, double price) {
+    public Item(String code, String name, double price, double Jumlah) {
         this.itemCode = code;
         this.itemName = name;
         this.itemPrice = price;
+        this.Jumlah = Jumlah;
+    }
+
+    public Item(double bayar){
+        this.bayar = bayar;
     }
 
     public int updateStock(int stockUpdate){
@@ -49,6 +55,12 @@ public class Item {
     public int getStock(){
         return itemStock;
     }
+    public double getQuantity(){
+        return Jumlah;
+    }
 
-
+    public double getbayar(){
+        return bayar;
+    }
+    
 }

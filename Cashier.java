@@ -1,4 +1,3 @@
-package Kasir;
 import java.util.ArrayList;
 
 public class Cashier {
@@ -8,8 +7,8 @@ public class Cashier {
         items = new ArrayList<>();
     }
 
-    public void addItem(double p, String c, String n) {
-        items.add(new Item(c, n, p));
+    public void addItem(double p, String c, String n,double  j) {
+        items.add(new Item(c, n, p, j));
         System.out.println("Barang ditambahkan.");
     }
 
@@ -27,8 +26,33 @@ public class Cashier {
     public void displayTotal() {
         double total = 0.0;
         for (Item item : items) {
-            total += item.getPrice();
+            total += item.getPrice() * item.getQuantity();
         }
         System.out.println("Total belanja: " + total);
+        System.out.println("============================");
+        System.out.println();
+    }
+
+    public void Struk(){
+        System.out.println("Struk Belanja");
+        for (Item item : items) {
+            System.out.println("========================================");
+            System.out.println("Kode Barang : " + item.getCode());
+            System.out.println("Nama Barang : " + item.getName());
+            System.out.println("Harga Barang : " + item.getPrice());
+            System.out.println("Jumlah Barang : " + item.getQuantity());
+            System.out.println("=========================================");
+            }
+
+    }
+    public void Kembalian(double payment){
+        double total = 0.0;
+        for (Item item : items) {
+            total += item.getPrice() * item.getQuantity();
+           
+
+        }
+         System.out.println("Uang anda : " + payment);
+        System.out.println("Total Kembalian: " + (payment - total));
     }
 }
